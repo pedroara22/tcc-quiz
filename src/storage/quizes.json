@@ -1,0 +1,78 @@
+[
+  {
+    "id": 0,
+    "name": "Quiz de capitais",
+    "author": "João",
+    "description": "Quiz com perguntas sobre as capitais de alguns países",
+    "questions": [
+      {
+        "question": "Qual a capital do Brasil?",
+        "options": [
+          "Rio de Janeiro",
+          "São Paulo",
+          "Brasília",
+          "Belo Horizonte"
+        ],
+        "answer": "Brasília"
+      },
+      {
+        "question": "Qual a capital da Argentina?",
+        "options": [
+          "Buenos Aires",
+          "Córdoba",
+          "Rosário",
+          "Mendoza"
+        ],
+        "answer": "Buenos Aires"
+      },
+      {
+        "question": "Qual a capital da França?",
+        "options": [
+          "Paris",
+          "Lyon",
+          "Marselha",
+          "Toulouse"
+        ],
+        "answer": "Paris"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Quiz de matemática",
+    "description": "Quiz com perguntas sobre matemática",
+    "author": "Maria",
+    "questions": [
+      {
+        "question": "Quanto é 2 + 2?",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "answer": "4"
+      },
+      {
+        "question": "Quanto é 3 x 3?",
+        "options": [
+          "6",
+          "9",
+          "12",
+          "15"
+        ],
+        "answer": "9"
+      },
+      {
+        "question": "Quanto é 10 - 5?",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "answer": "5"
+      }
+    ]
+  }
+]
