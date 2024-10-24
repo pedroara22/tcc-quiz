@@ -42,7 +42,7 @@ export default function LoginPage() {
           Password:
           <input type="password" name="password" onChange={handlePasswordChange}/>
         </label>
-        <button type="submit" onClick={handleSubmit} >Login</button>
+        <button type="submit" onClick={handleSubmit}>Login</button>
         {success?<AvisoDeSucesso aviso={success} />: null}
         {error?<AvisoDeErro aviso={error} /> : null}
     </div>
