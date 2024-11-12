@@ -6,6 +6,7 @@ Update 1.1
 Foram adicionadas as seguintes páginas:
 - Página inicial
 - Resposta do quiz
+
 Foram feitas as seguintes alterações:
 - Alteração do layout das páginas
 - Adição de botões de navegação

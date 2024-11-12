@@ -57,15 +57,44 @@
 #loginFormDiv{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 60vh;
+  justify-content: flex-end;
+  height: 340px;
+  background: #00bf63;
   transition: 2s;
+  align-items: center;
+  margin-top: 40px;
+  border-radius: 25px;
+}
+#absoluteBox{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loginImagem{
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: #000;
+  border-radius: 50%;
+
 }
 #loginFormDiv input{
   padding: 10px;
-  margin: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  margin: 10px 30px 15px 30px;
+  border-radius: 20px;
+  width: 200px;
+  border: none;
+  background: white;
+  color: #000;
+}
+#loginFormDiv input::placeholder{
+  color: #000;
+  text-align: center;
 }
 #quizCard{
   display: flex;
