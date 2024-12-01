@@ -29,8 +29,8 @@ Update 1.2
 Foram melhoradas diversas páginas
 - Página Resumo
 - Página Conheça
-Conexão com o banco de dados mongo db
-Toda a parte de login e cadastro está completa
+- Conexão com o banco de dados mongo db
+- Toda a parte de login e cadastro está completa
 
 A fazeres
 ----------
