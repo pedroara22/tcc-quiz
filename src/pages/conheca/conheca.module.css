@@ -1,0 +1,61 @@
+#p1Text{
+    font-size: 1.3rem;
+    color: #000;
+    text-align: justify;
+    width: 50%;
+}
+#p1Div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+}
+#Texts{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70vw;
+    height: 100%;
+}
+#text{
+    font-size: 1.3rem;
+    color: #000;
+    text-align: justify;
+    width: 30%;
+    margin: 0;
+}
+#TextsBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    text-align: justify;
+}
+#nextButton{
+    background: #00bf63;
+    align-self: flex-end;
+    margin-right: 15vw;
+    margin-top: 30px;
+}
+#h3{
+    font-size: 1.5rem;
+    color: #000;
+    text-align: center;
+    margin: 0;
+}
+#nextLink{
+    background: #00bf63;
+    align-self: flex-end;
+    margin-right: 15vw;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+#nextLink button{
+    background: none;
+}

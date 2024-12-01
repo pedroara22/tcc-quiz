@@ -1,36 +1,41 @@
 import { useState } from 'react'
-import data from './storage/quizes.json'
 import './App.css'
-import QuizCard from './components/quizCard'
-import AvisoDeErro from './components/avisoDeErro'
-import { Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/profile/loginPage.jsx";
+import QuizPage from "./pages/quiz/quizPage.jsx";
+import MainLayout from "./components/Layout/mainLayout.jsx";
+import ErrorPage from "./pages/errorPage.jsx";
+import PrincipalPage from "./pages/principalPage.jsx";
+import Quiz from './pages/quiz/quiz.jsx';
+import ProfilePage from './pages/profile/profilePage.jsx';
+import SignupPage from './pages/profile/signupPage.jsx';
+import Projeto from './pages/projeto/projeto.jsx';
+import ConhecaPage from './pages/conheca/ConhecaPage.jsx';
+import PrePage from './pages/projeto/prePage.jsx';
+
+//api password 7RcYTSP5ZlAWBn22
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [error, setError] = useState('')
-
-  function handleData(){
-    if(data.length === 0){
-      setError('No data to show')
-    }
-  }
-
-  
-
   return (
-    <>
-    <div id="quizArea">
-      {
-      data.map((quiz, index) => {
-        return (
-          <Link to={`/quiz/${index}`} key={index} >
-            <QuizCard key={index} id={index} name={quiz.name} description={quiz.description} questions={quiz.questions} />
-          </Link>
-        )
-      })}
-      </div>
-      {error?<AvisoDeErro aviso={error} />:null}
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout><PrincipalPage /></MainLayout>} />
+        <Route path="/profile" element={<MainLayout><ProfilePage /></MainLayout>} />
+        <Route path="/quiz" element={<MainLayout><Quiz /></MainLayout>} />
+        <Route path="/quiz/:id" element={<MainLayout><QuizPage /></MainLayout>} />
+        <Route path="/profile" element={<MainLayout><ProfilePage /></MainLayout>} />
+        <Route path="/login" element={<MainLayout><LoginPage /></MainLayout>} />
+        <Route path='/conheca' element={<MainLayout><ConhecaPage /></MainLayout>} />
+        <Route path="/signup" element={<MainLayout><SignupPage /></MainLayout>} />
+        <Route path="/project" element={<MainLayout><PrePage /></MainLayout>} />
+        <Route path="/project/1" element={<MainLayout><Projeto /></MainLayout>} />
+
+      /** Rota para página de erro,  quando não há um domínio a página "ErrorPage" é renderizada */
+        <Route path="*" element={<MainLayout><ErrorPage /></MainLayout>} />
+
+
+      </Routes>
+    </BrowserRouter>
   )
 }
 

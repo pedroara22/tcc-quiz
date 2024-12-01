@@ -1,4 +1,4 @@
-import data from "../storage/quizes.json";
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function QuizPage() {
@@ -8,10 +8,8 @@ export default function QuizPage() {
   const [pos, setPos] = useState(0);
 
   useEffect(() => {
-    data.map((quiz) => {
-      if (quiz.id == window.location.pathname.split("").slice(6).join("")) {
-        setQuiz(quiz);
-      }
+    axios.get("http://localhost:3000/getQuiz/"+window.location.pathname.split("").slice(6).join("")).then((response) => {
+      setQuiz(response.data);
     });
   }, []);
 

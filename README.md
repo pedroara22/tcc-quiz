@@ -12,3 +12,19 @@ Foram feitas as seguintes alterações:
 - Adição de botões de navegação
 - Adição da barra de navegação
 - Criação do sistema de quizes com vida e pontuação
+
+Update 1.2
+=============
+Foram melhoradas diversas páginas
+- Página Resumo
+- Página Conheça
+Conexão com o banco de dados mongo db
+Toda a parte de login e cadastro está completa
+
+A fazeres
+----------
+Arrumar soluções da parte a fazeres
+Criar página editar usuário
+Implementa personalização e criação dos quizes
+Fazer página sobre
+Mudar página do perfil
