@@ -1,5 +1,16 @@
 TCC Project
 ============
+Como iniciar:
+Baixar as dependências
+````
+npm install
+````
+Iniciar 
+````
+npm run dev
+````
+----------
+
 This is a project for the TCC course at the Cefet-MG. The project is a web application that allows users to create and manage their own quizes. The project is being developed using the React framework.
 
 Update 1.1
@@ -23,8 +34,8 @@ Toda a parte de login e cadastro está completa
 
 A fazeres
 ----------
-Arrumar soluções da parte a fazeres
-Criar página editar usuário
-Implementa personalização e criação dos quizes
-Fazer página sobre
-Mudar página do perfil
+- Arrumar soluções da parte a fazeres
+- Criar página editar usuário
+- Implementa personalização e criação dos quizes
+- Fazer página sobre
+- Mudar página do perfil
