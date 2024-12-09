@@ -58,6 +58,17 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  height: 180px;
+  background: #00bf63;
+  transition: 2s;
+  align-items: center;
+  margin-top: 40px;
+  border-radius: 25px;
+}
+#signupFormDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 340px;
   background: #00bf63;
   transition: 2s;
@@ -79,11 +90,12 @@
   position: absolute;
   width: 80px;
   height: 80px;
-  background-color: #000;
   border-radius: 50%;
+  overflow: hidden;
 
 }
-#loginFormDiv input{
+#loginFormDiv input,
+#signupFormDiv input{
   padding: 10px;
   margin: 10px 30px 15px 30px;
   border-radius: 20px;
@@ -92,7 +104,8 @@
   background: white;
   color: #000;
 }
-#loginFormDiv input::placeholder{
+#loginFormDiv input::placeholder,
+#signupFormDiv input::placeholder{
   color: #000;
   text-align: center;
 }
@@ -144,23 +157,18 @@
   padding: 0;
   margin: 0;
 }
-#principalPage button:nth-child(1){
+#principalPage a:nth-child(1) button{
   margin: 10px;
   color: #000;
   background-color: #e2e60a;
 }
-#principalPage button:nth-child(2){
+#principalPage a:nth-child(2) button{
   margin: 10px;
   color: #000;
   background-color: #00bf63;
 }
 
-#quizOptions{
-  min-width: 20vw;
-  background: #e2e60a;
-  display: flex;
-  padding: 5px;
-}
+
 
 main{
   min-height: 90vh;
@@ -203,11 +211,51 @@ main{
   width: 100vw;
   pad: 10px;
 }
-#quizPageDiv{
+
+a{
+  color: #000;
+  text-decoration: none;
+}
+#profilePageBox{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 100vh;
+  color: #fff;
+  background: #00bf63;
+  padding: 20px;
+  width: 50vw;
+  border-radius: 20px;
+}
+#profilePageBox div:nth-child(2){
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+}
+#profilePageBox div:nth-child(2) div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width:25%;
+}
+#profilePageBox div:nth-child(2) div h2{
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+}
+.loginImagemProfile{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: -60px;
+  overflow: hidden;
+
+}
+#answerQuiz{
+  padding: 10px;
+  border: none;
+  background: #00bf63;
   color: #000;
 }

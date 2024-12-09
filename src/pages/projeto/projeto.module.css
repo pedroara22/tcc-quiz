@@ -81,3 +81,34 @@
     background: #e2e60a;
     width: 100px;
 }
+#row{
+    display: flex;
+    width:80%;
+}
+#column{
+    display: flex;
+    align-items: flex-start;
+    width: calc(100% / 3.5);
+    text-align: justify;
+    margin-left:18px;
+    margin-right: 18px;
+    margin-bottom: 18px;
+}
+#column img{
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1/1;
+    margin: 0;
+    padding:0;
+    margin-right: 20px;
+}
+#column p{
+    margin: 0;
+    padding:0;
+}
+#s{
+    width: 100vw;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}

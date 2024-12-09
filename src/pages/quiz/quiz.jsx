@@ -8,7 +8,9 @@ function Quiz() {
   const [error, setError] = useState('')
   const [quizzes, setQuizzes] = useState([])
 
-  
+  const admin = localStorage.getItem('email') == 'admin@admin.com.br'
+
+
   useEffect(() => {
     axios.get('http://localhost:3000/getQuizzes')
       .then((response) => {
@@ -36,13 +38,17 @@ function Quiz() {
           {
             quizzes.map((quiz, index) => {
               return (
-                <Link to={`/quiz/${quiz._id}`} key={index} >
-                  <QuizCard key={index} id={index} name={quiz.name} description={quiz.description} questions={quiz.questions} />
-                </Link>
+                <QuizCard key={index} id={quiz._id} name={quiz.name} description={quiz.description} questions={quiz.questions} />
               )
             })
           }
         </div>
+        { admin?
+          <button>
+            <Link to="/createQuiz">Criar quiz</Link>
+          </button>
+          :null
+        }
         {error ? <AvisoDeErro aviso={error} /> : null}
       </>
     )

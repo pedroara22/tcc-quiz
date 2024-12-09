@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AvisoDeErro from "../../components/Avisos/avisoDeErro";
 import AvisoDeSucesso from "../../components/Avisos/avisoDeSucesso";
 import { Link } from "react-router-dom";
-import formImg from "/profile.jpeg";
 
-const SignupPage = () => {
+
+const EditProfilePage = () => {
+
+    
+
+    const [id, setId] = useState("");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [confirmEmail, setConfirmEmail] = useState("");
@@ -14,18 +18,38 @@ const SignupPage = () => {
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
 
-    const handleSignupSubmit = (e) => {
+    useEffect(() => {
+
+    axios.get(`http://localhost:3000/getUser/${localStorage.getItem("email")}`, {
+        headers: {
+            "Content-Type": "application/json;charset=UTF-8",
+            "Access-Control-Allow-Origin": "*",
+        }
+    })
+        .then((res) => {
+            setId(res.data._id);
+            setName(res.data.name);
+            setEmail(res.data.email);
+            setConfirmEmail(res.data.email);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }, []);
+
+    const handleEditProfileSubmit = (e) => {
         e.preventDefault();
         var body = {
-          name: name,
-          email: email,
-          password: password,
+          id,
+          name,
+          email,
+          password,
         }
     
         if (email == confirmEmail && password == confirmPassword) {
           setError("");
           axios
-            .post("http://localhost:3000/createUser", 
+            .post("http://localhost:3000/updateUser", 
               body,
               {
               headers:{
@@ -38,7 +62,7 @@ const SignupPage = () => {
               setSuccess("Cadastro realizado com sucesso. Redirecionando...");
               localStorage.setItem("email", email);
               localStorage.setItem("password", password);
-              if(window.location.pathname == "/signup/createQuiz"){
+              if(window.location.pathname == "/EditProfile/createQuiz"){
                 window.location.href = "/createQuiz";
               }
               else{
@@ -65,12 +89,13 @@ const SignupPage = () => {
     return(
         <>
         <div id="absoluteBox">
-          <div className="loginImagem"><img src={formImg} alt="formImg" width={80} /></div>
+          <div className="loginImagem"><img src="/profile.jpeg" width={80} /></div>
           <div id="signupFormDiv">
             <input
               type="text"
               name="username"
               placeholder="Nome Completo"
+              value={name}
               onChange={(e) => setName(e.target.value)}
             />
   
@@ -78,6 +103,8 @@ const SignupPage = () => {
               type="text"
               name="email"
               placeholder="Email"
+              value={email}
+                disabled
               onChange={(e) => setEmail(e.target.value)}
             />
   
@@ -85,6 +112,8 @@ const SignupPage = () => {
               type="text"
               name="confirmUsername"
               placeholder="Confirme o email"
+              disabled
+              value={confirmEmail}
               onChange={(e) => setConfirmEmail(e.target.value)}
             />
   
@@ -102,8 +131,7 @@ const SignupPage = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
-          <button onClick={handleSignupSubmit}>Cadastrar</button>
-          <Link to={window.location.pathname=="/signup/createQuiz"?"/login/createQuiz":"/login"}>Já tenho uma conta</Link>
+          <button onClick={handleEditProfileSubmit}>Editar Perfil</button>
           {success ? <AvisoDeSucesso aviso={success} /> : null}
           {error ? <AvisoDeErro aviso={error} /> : null}
         </div>
@@ -111,4 +139,4 @@ const SignupPage = () => {
     )
 };
 
-export default SignupPage;
+export default EditProfilePage;

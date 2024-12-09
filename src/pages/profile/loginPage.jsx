@@ -3,8 +3,10 @@ import AvisoDeErro from "../../components/Avisos/avisoDeErro";
 import AvisoDeSucesso from "../../components/Avisos/avisoDeSucesso";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import formImg from "/profile.jpeg";
 import SignupPage from "./signupPage";
 var apiURL = "http://localhost:3000/";
+
 
 export default function LoginPage() {
   
@@ -17,6 +19,18 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
 
   const handleLoginSubmit = (e) => {
+    if(email == "" || password == ""){
+      setError("Preencha os dados corretamente");
+      return;
+    }
+    if(email.indexOf("@") == -1 || email.indexOf(".") == -1){
+      setError("Email inválido");
+      return;
+    }
+    if(password.length < 6){
+      setError("Senha muito curta");
+      return;
+    }
     e.preventDefault();
     setError("");
     var body = {
@@ -38,7 +52,12 @@ export default function LoginPage() {
         function setLocalStorage(){
           localStorage.setItem("email", email);
           localStorage.setItem("password", password);
+          if(window.location.pathname == "/login/createQuiz"){
+            window.location.href = "/createQuiz";
+          }
+          else{
           window.location.href = "/profile";
+          }
         }
         setTimeout(setLocalStorage, 500);
       })
@@ -59,7 +78,7 @@ export default function LoginPage() {
     return(
     <>
     <div id="absoluteBox">
-      <div className="loginImagem"></div>
+      <div className="loginImagem"><img src={formImg} width={80} /></div>
       <div id="loginFormDiv">
         <input
           type="text"
@@ -78,7 +97,8 @@ export default function LoginPage() {
       <button onClick={handleLoginSubmit}>Login</button>
       {success ? <AvisoDeSucesso aviso={success} /> : null}
       {error ? <AvisoDeErro aviso={error} /> : null}
-    <Link to="/signup">Ainda não tenho uma conta</Link>
+    <Link to={window.location.pathname=="/login/createQuiz"?"/signup/createQuiz":"/signup"
+    }>Ainda não tenho uma conta</Link>
     </div>
   </>
     );

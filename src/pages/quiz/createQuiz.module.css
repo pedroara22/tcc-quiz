@@ -1,0 +1,52 @@
+.input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+#body{
+    overflow: auto;
+    height: 70vh;
+}
+#questionCard{
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    margin: 0px 20px 40px 20px;
+}
+#questionCard input{
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#questionCardArea{
+    display: flex;
+    width: 80vw;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#previous, #next{
+    width: 20%;
+    aspect-ratio: 1/1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#buttonsArea{
+    display: flex;
+    justify-content: space-around;
+}
+#correctAnswer{
+    background: green;
+}
